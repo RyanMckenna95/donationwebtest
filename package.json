@@ -1,0 +1,20 @@
+{
+  "name": "donationweb-2.0",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "mongo": "^0.1.0",
+    "mongo-uri": "^0.1.2",
+    "mongodb-uri": "^0.9.7",
+    "mongoose": "^5.1.4",
+    "morgan": "~1.9.0"
+  }
+}
