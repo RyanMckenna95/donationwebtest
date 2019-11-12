@@ -3,10 +3,21 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 let uriUtil = require('mongodb-uri');
+const dotenv = require('dotenv');
+dotenv.config();
 
-var mongodbUri ='mongodb://donationsdb:donationsdb999@ds255260.mlab.com:55260/donationsdb';
 
-mongoose.connect(mongodbUri);
+//var mongodbUri ='mongodb://donationsdb:donationsdb999@ds255260.mlab.com:55260/donationsdb';
+
+var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
+    replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } },
+    user: 'YOURMONGODBUSERNAME', pass: 'YOURMONGODBPASSWORD' };
+
+var mongodbUri = `mongodb://${process.env.db_User}:${process.env.db_pass}@ds029287.mlab.com:29287/heroku_bmwbk872`;
+var mongooseUri = uriUtil.formatMongoose(mongodbUri);
+
+//mongoose.connect(mongodbUri);
+mongoose.connect(mongooseUri,options);
 
 //mongoose.connect('mongodb://localhost:27017/donationsdb');
 
