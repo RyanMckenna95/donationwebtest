@@ -13,7 +13,7 @@ var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000
     replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } },
     user: 'YOURMONGODBUSERNAME', pass: 'YOURMONGODBPASSWORD' };
 
-var mongodbUri = `mongodb://${process.env.db_User}:${process.env.db_pass}@ds029287.mlab.com:29287/heroku_bmwbk872`;
+var mongodbUri = `mongodb://ruser:test123@ds029287.mlab.com:29287/heroku_bmwbk872`;
 var mongooseUri = uriUtil.formatMongoose(mongodbUri);
 
 //mongoose.connect(mongodbUri);
